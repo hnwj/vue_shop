@@ -41,14 +41,14 @@
 <script>
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
-      //这是登录表单的数据绑定对象
+      // 这是登录表单的数据绑定对象
       loginForm: {
         username: 'admin',
-        password: '123456',
+        password: '123456'
       },
-      //登录规则
+      // 登录规则
       loginFormRules: {
         // 用户名规则
         username: [
@@ -57,8 +57,8 @@ export default {
             min: 3,
             max: 10,
             message: '长度在 3 到 10 个字符',
-            trigger: 'blur',
-          },
+            trigger: 'blur'
+          }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
@@ -66,18 +66,18 @@ export default {
             min: 6,
             max: 15,
             message: '长度在 6 到 15 个字符',
-            trigger: 'blur',
-          },
-        ],
-      },
+            trigger: 'blur'
+          }
+        ]
+      }
     }
   },
   methods: {
-    resetLoginForm() {
+    resetLoginForm () {
       console.log(this)
       this.$refs.loginFormRef.resetFields()
     },
-    login() {
+    login () {
       this.$refs.loginFormRef.validate(async (valid) => {
         if (!valid) return
         const { data: res } = await this.$http.post('login', this.loginForm)
@@ -87,8 +87,8 @@ export default {
         window.sessionStorage.setItem('token', res.data.token)
         this.$router.push('/home')
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

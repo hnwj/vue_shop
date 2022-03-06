@@ -5,6 +5,8 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
 import User from '../components/User/User.vue'
+import Rights from '../components/Power/Rights.vue'
+import Roles from '../components/Power/Roles.vue'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -12,12 +14,12 @@ const router = new VueRouter({
     {
       path: '/login',
       component: Login,
-      name: 'login'
+      name: 'login',
     },
     // 重定向
     {
       path: '/',
-      redirect: '/login'
+      redirect: '/login',
     },
     {
       path: '/home',
@@ -28,16 +30,26 @@ const router = new VueRouter({
         {
           name: 'welcome',
           path: '/welcome',
-          component: Welcome
+          component: Welcome,
         },
         {
           name: 'users',
           path: '/Users',
-          component: User
-        }
-      ]
-    }
-  ]
+          component: User,
+        },
+        {
+          name: 'rights',
+          path: '/Rights',
+          component: Rights,
+        },
+        {
+          name: 'roles',
+          path: '/Roles',
+          component: Roles,
+        },
+      ],
+    },
+  ],
 })
 
 router.beforeEach((to, from, next) => {

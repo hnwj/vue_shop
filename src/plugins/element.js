@@ -29,6 +29,7 @@ import {
   Tag,
   Tree,
   Select,
+  Cascader
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Input)
@@ -56,6 +57,7 @@ Vue.use(Dialog)
 Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
+Vue.use(Cascader)
 // 把message属性挂载到Vue上去
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
